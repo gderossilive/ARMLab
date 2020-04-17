@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualMachines_PCLVM1721101457_name": {
+            "value": null
+        },
+        "diskEncryptionSets_PCLDiskEncryptionSet1721101457_externalid": {
+            "value": null
+        },
+        "disks_PCLVM1721101457_OsDisk_1_8277c6a5b806405fbddb92a9deb6d471_externalid": {
+            "value": null
+        },
+        "disks_MyVM_data0_externalid": {
+            "value": null
+        },
+        "disks_MyVM_data1_externalid": {
+            "value": null
+        },
+        "networkInterfaces_myNic_externalid": {
+            "value": null
+        }
+    }
+}
