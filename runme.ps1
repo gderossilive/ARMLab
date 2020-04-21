@@ -28,6 +28,6 @@ Write-Host "Press [ENTER] to continue ..."
 $templateUri = "https://raw.githubusercontent.com/gderossilive/ARMLab/master/AzureVMdeploy.json"
 $templatefile = "C:\Users\gderossi\OneDrive - Microsoft\Poste Italiane\PCL\GitHub\ARMlab\AzureVMdeploy.parameters.json"
 
-New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateFile $templatefile -TemplateUri $templateUri
+New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateParameterFile $templatefile -TemplateUri $templateUri
 
 Write-Host "Press [ENTER] to continue ..."

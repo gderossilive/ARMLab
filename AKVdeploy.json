@@ -14,14 +14,14 @@
         "defaultValue": "[subscription().tenantId]"
       },
       "adUserId": {
-        "type": "string",
+        "type": "string"
       },
       "secretName": {
         "type": "string",
         "defaultValue": "vmAdminPassword"
       },
       "secretValue": {
-        "type": "securestring",
+        "type": "securestring"
       }
     },
     "resources": [
