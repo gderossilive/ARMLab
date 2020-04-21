@@ -9,7 +9,7 @@
           "description": "Location for all resources."
         } 
     },
-    "storageAccountName": {
+        "storageAccountName": {
         "type": "string",
         "metadata": {
           "description": "Specify the storage account name."

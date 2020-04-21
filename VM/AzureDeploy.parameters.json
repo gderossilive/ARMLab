@@ -18,7 +18,7 @@
         "value": "Standard_D2_v3"
         },
       "location": {
-        "value": "Western Europe"
+        "value": "westeurope"
         },
         "linkedTemplateUri": {
           "value": "https://raw.githubusercontent.com/gderossilive/ARMLab/master/AzureDeployStorage.json?token=AEZ3DI2A5A6HIR5QZHVHY4C6TXIUG"
