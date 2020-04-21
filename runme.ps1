@@ -7,7 +7,7 @@ param (
 
 $connect=Connect-AzAccount
 $context = Get-AzSubscription -SubscriptionId $SubscriptionID
-#Set-AzContext $context
+Set-AzContext $context
 
 $projectName = "gdr"+(Get-Random)
 $location = "westeurope"
