@@ -4,7 +4,7 @@
     "parameters": {
         "vmName": {
             "type": "string",
-            "defaultValue": "simpleLinuxVM",
+            "defaultValue": "securedLinuxVM",
             "metadata": {
                 "description": "The name of you Virtual Machine."
             }
