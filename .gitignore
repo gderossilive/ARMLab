@@ -1,2 +1,2 @@
-AzureVMdeploy.parameters.json
+*.parameters.json
 *.ps1
