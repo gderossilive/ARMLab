@@ -4,7 +4,7 @@
     "parameters": {
         "vmName": {
             "type": "string",
-            "defaultValue": "securedLinuxVM01",
+            "defaultValue": "securedLinuxVM",
             "metadata": {
                 "description": "The name of you Virtual Machine."
             }
@@ -82,7 +82,7 @@
         }        
     },
     "variables": {
-        "publicIpAddressName": "PublicIP",
+        "publicIpAddressName": "[concat(parameters('vmName'),'PublicIP')]",
         "networkInterfaceName": "[concat(parameters('vmName'),'NetInt')]",
         "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'), parameters('subnetName'))]",
         "osDiskType": "Standard_LRS",
