@@ -20,6 +20,6 @@ steps:
     location: 'West Europe'
     templateLocation: 'Linked artifact'
     csmFile: 'LinuxVMDeploy.json'
-    overrideParameters: '-TemplateUri "https://raw.githubusercontent.com/gderossilive/ARMLab/master/LinuxVMdeploy.json" -vmName "LinuVM02" -adminUserName "gdradmin" -adminPasswordOrKey "!Superpassword1"'
+    overrideParameters: '-TemplateUri "https://raw.githubusercontent.com/gderossilive/ARMLab/master/" -vmName "LinuVM02" -adminUserName "gdradmin" -adminPasswordOrKey "!Superpassword1"'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
