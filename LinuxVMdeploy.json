@@ -188,7 +188,8 @@
                 "contentVersion": "1.0.0.0"
               },
               "parameters":{
-                  "publicIPAddressesName":{"value": "[variables('publicIpAddressName')]"}
+                  "publicIPAddressesName":{"value": "[variables('publicIpAddressName')]"},
+                  "dnsLabelPrefix":{"value": "[toLower(concat(parameters('vmName'), uniqueString(resourceGroup().id)))]"}
               }
             }
         },
