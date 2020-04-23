@@ -188,7 +188,7 @@
                 "contentVersion": "1.0.0.0"
               },
               "parameters":{
-                  "publicIPAddresses_name":{"value": "[variables('publicIpAddressName')]"}
+                  "publicIPAddressesName":{"value": "[variables('publicIpAddressName')]"}
               }
             }
         },

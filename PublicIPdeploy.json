@@ -2,7 +2,7 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "publicIPAddresses_name": {
+        "publicIPAddressesName": {
             "type": "string"
         },
         "dnsLabelPrefix": {
@@ -25,7 +25,7 @@
         {
             "type": "Microsoft.Network/publicIpAddresses",
             "apiVersion": "2019-02-01",
-            "name": "[parameters('publicIPAddresses_name')]",
+            "name": "[parameters('publicIPAddressesName')]",
             "location": "[parameters('location')]",
             "properties": {
                 "publicIpAllocationMethod": "Dynamic",
@@ -45,7 +45,7 @@
     "outputs": {
         "resourceID": {
             "type": "string",
-            "value": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_name'))]"
+            "value": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddressesName'))]"
         }
     }
 }
