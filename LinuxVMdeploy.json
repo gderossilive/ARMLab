@@ -79,16 +79,10 @@
             "metadata": {
                 "description": "Name of the Network Security Group"
             }
-        },
-        "publicIpAddressName": {
-            "type": "string",
-            "defaultValue": "[concat(parameters('vmName'), 'PublicIP' )]",
-            "metadata": {
-                "description": "Name of the Network Security Group"
-            }
-        }
+        }        
     },
     "variables": {
+        "publicIpAddressName": "[concat(parameters('vmName'),'PublicIP')]",
         "networkInterfaceName": "[concat(parameters('vmName'),'NetInt')]",
         "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'), parameters('subnetName'))]",
         "osDiskType": "Standard_LRS",
@@ -115,7 +109,7 @@
             "dependsOn": [
                 "[resourceId('Microsoft.Network/networkSecurityGroups/', parameters('networkSecurityGroupName'))]",
                 "[resourceId('Microsoft.Network/virtualNetworks/', parameters('virtualNetworkName'))]",
-                "[resourceId('Microsoft.Network/publicIpAddresses/', parameters('publicIpAddressName'))]"
+                "[resourceId('Microsoft.Network/publicIpAddresses/', variables('publicIpAddressName'))]"
             ],
             "properties": {
                 "ipConfigurations": [
@@ -127,7 +121,7 @@
                             },
                             "privateIPAllocationMethod": "Dynamic",
                             "publicIpAddress": {
-                                "id": "[resourceId('Microsoft.Network/publicIPAddresses',parameters('publicIPAddressName'))]"
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))]"
                             }
                         }
                     }
@@ -194,7 +188,7 @@
                 "contentVersion": "1.0.0.0"
               },
               "parameters":{
-                  "publicIPAddresses_name":{"value": "[parameters('publicIpAddressName')]"}
+                  "publicIPAddresses_name":{"value": "[variables('publicIpAddressName')]"}
               }
             }
         },
@@ -247,11 +241,11 @@
         },
         "hostname": {
             "type": "string",
-            "value": "[reference(parameters('publicIPAddressName')).dnsSettings.fqdn]"
+            "value": "[reference(variables('publicIPAddressName')).dnsSettings.fqdn]"
         },
         "sshCommand": {
             "type": "string",
-            "value": "[concat('ssh ', parameters('adminUsername'), '@', reference(parameters('publicIPAddressName')).dnsSettings.fqdn)]"
+            "value": "[concat('ssh ', parameters('adminUsername'), '@', reference(variables('publicIPAddressName')).dnsSettings.fqdn)]"
         }
     }
 }
