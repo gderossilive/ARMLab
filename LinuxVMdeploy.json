@@ -82,7 +82,7 @@
         }        
     },
     "variables": {
-        "publicIpAddressName": "Pippo",
+        "publicIpAddressName": "PublicIP",
         "networkInterfaceName": "[concat(parameters('vmName'),'NetInt')]",
         "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'), parameters('subnetName'))]",
         "osDiskType": "Standard_LRS",
@@ -184,7 +184,7 @@
             "properties": {
               "mode": "Incremental",
               "templateLink": {
-                "uri": "[uri(deployment().properties.templateLink.uri, 'public-ip.json')]",
+                "uri": "[uri(deployment().properties.templateLink.uri, 'PublicIPdeploy.json')]",
                 "contentVersion": "1.0.0.0"
               },
               "parameters":{
