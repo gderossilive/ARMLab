@@ -1,0 +1,25 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'ARMlab'
+    subscriptionId: '594cafab-484b-40b0-8336-f0a6042a8754'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'gdrdevops'
+    location: 'West Europe'
+    templateLocation: 'Linked artifact'
+    csmFile: 'LinuxVMDeploy.json'
+    overrideParameters: '-TemplateUri "https://raw.githubusercontent.com/gderossilive/ARMLab/master/" -vmName "LinuVM02" -adminUserName "gdradmin" -adminPasswordOrKey "!Superpassword1"'
+    deploymentMode: 'Incremental'
+    deploymentName: 'DeployPipelineTemplate'
