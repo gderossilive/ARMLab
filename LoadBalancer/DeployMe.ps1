@@ -1,12 +1,19 @@
+Connect-AzAccount
+$subscriptionChoose = @(Get-AzSubscription |Out-GridView -Title "Select your subscriptions" -PassThru)
+Set-AzContext $subscriptionChoose.Name
+
 $projectName = "RG"+(Get-Random)
 $location = "westeurope"
-$adminUserName = Read-Host -Prompt "Enter the virtual machine administrator account name"
-$adminPassword = Read-Host -Prompt "Enter the virtual machine administrator password" -AsSecureString
-
 $resourceGroupName = "${projectName}rg"
-$templateUri = "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-load-balancer-standard-create/azuredeploy.json"
+$templateUri = "https://raw.githubusercontent.com/gderossilive/ARMLab/master/LoadBalancer/RGdeploy.json"
 
-New-AzResourceGroup -Name $resourceGroupName -Location $location
-New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri $templateUri -projectName $projectName -location $location -adminUsername $adminUsername -adminPassword $adminPassword
+New-AzDeployment -Location $location -TemplateUri $templateUri -RGname $resourceGroupName -RGlocation $location
+#New-AzResourceGroup -Name $resourceGroupName -Location $location
 
 Write-Host "Press [ENTER] to continue."
+
+$adminUserName = Read-Host -Prompt "Enter the virtual machine administrator account name"
+$adminPassword = Read-Host -Prompt "Enter the virtual machine administrator password" -AsSecureString
+$templateUri = "https://raw.githubusercontent.com/gderossilive/ARMLab/master/LoadBalancer/LBdeploy.json"
+
+New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri $templateUri -projectName $projectName -location $location -adminUsername $adminUsername -adminPassword $adminPassword
