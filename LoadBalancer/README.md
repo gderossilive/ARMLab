@@ -6,5 +6,4 @@ Questo esempio prevede:
 - La creazione di 3 VM Windows con IIS installato
 - La modifica della pagina di default di IIS, inserendo il nome della VM ospite
 
-![Load Balancer](./Media/LoadBalancer.png)
-## Figura ## 
+![Load Balancer](./Media/LoadBalancer.png) 
