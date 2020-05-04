@@ -7,3 +7,4 @@ Questo esempio prevede:
 - La modifica della pagina di default di IIS, inserendo il nome della VM ospite
 
 ![Load Balancer](./Media/LoadBalancer.png)
+## Figura ## 
