@@ -2,7 +2,7 @@ Connect-AzAccount
 $subscriptionChoose = @(Get-AzSubscription |Out-GridView -Title "Select your subscriptions" -PassThru)
 Set-AzContext $subscriptionChoose.Name
 
-$projectName = "RG"+(Get-Random)
+$projectName = (Get-Random)
 $location = "westeurope"
 $resourceGroupName = "${projectName}rg"
 $templateUri = "https://raw.githubusercontent.com/gderossilive/ARMLab/master/LoadBalancer/RGdeploy.json"
