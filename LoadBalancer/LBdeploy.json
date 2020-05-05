@@ -257,7 +257,7 @@
         },
         "copy": {
           "name": "publicIPAddressCopy",
-          "count": 3
+          "count": "[parameters('Items')]"
         },
         "properties": {
           "publicIPAddressVersion": "IPv4",
@@ -271,7 +271,7 @@
         "location": "[parameters('location')]",
         "copy": {
           "name": "networkInterfaceCopy",
-          "count": 3
+          "count": "[parameters('Items')]"
         },
         "dependsOn": [
           "[resourceId('Microsoft.Network/virtualNetworks/', variables('vNetName'))]",
@@ -311,7 +311,7 @@
         "location": "[parameters('location')]",
         "copy": {
           "name": "extensionCopy",
-          "count": 3
+          "count": "[parameters('Items')]"
         },
         "dependsOn": [
           "vmCopy"
