@@ -4,6 +4,7 @@ Set-AzContext $subscriptionChoose.Name
 $adUserId = (Get-AzADUser -UserPrincipalName $connect.Context.Account.id).Id
 $location="westeurope"
 
+# ciao
 
 #$projectName = "gdr1927008259"
 $projectName = "Spoke"+(Get-Random)
